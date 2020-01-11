@@ -1,5 +1,5 @@
 /*!
- * vue-authenticate v1.4.1
+ * vue-authenticate v1.4.2
  * https://github.com/dgrubelic/vue-authenticate
  * Released under the MIT License.
  */
@@ -1389,6 +1389,7 @@ VueAuthenticate.prototype.logout = function logout (requestOptions) {
 
     return this.$http(requestOptions).then(function (response) {
       this$1.storage.removeItem(this$1.tokenName);
+      return response
     })
   } else {
     this.storage.removeItem(this.tokenName);
